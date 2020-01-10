@@ -9,12 +9,12 @@
 
 ## Setup
 
-1. Download [NuGet](https://www.nuget.org/downloads) downloads.
+1. Download [NuGet](https://www.nuget.org/downloads) from the official NuGet's downloads page.
 2. Go to the downloaded `nuget.exe` path.
 3. Get apikey from [NuGet](https://www.nuget.org/account/apikeys) page.
 4. In the same folder where the `nuget.exe` is, run command `nuget.exe setapikey <your key here>` in cmd or PowerShell.
 5. Download `publish.ps1` from [releases](https://github.com/emimontesdeoca/nuget-publish-ps/releases).
-6. Copy the `publish.ps1` to the folder where the `.sln` file is.
+6. Copy the `publish.ps1` to the folder where the solution `.sln` file is.
 7. Run the script.
 
 ## Script
