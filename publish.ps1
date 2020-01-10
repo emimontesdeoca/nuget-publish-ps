@@ -1,7 +1,3 @@
-# publish-nuget-ps
-Publish nugget powershell script
-
-```
 if (!(Test-Path ".nuget\nuget.exe")) {
 	New-Item -ItemType directory -Path .nuget
 	
@@ -18,4 +14,4 @@ dotnet pack -c Release
 .nuget\nuget push *.nupkg -Source "https://nuget.org"
 
 Remove-Item bin\Release\*.nupkg
-```
+
