@@ -13,6 +13,8 @@ if (!(Test-Path "bin\Release")) {
 
 dotnet build -c Release
 
+Remove-Item bin\Release\*.nupkg
+
 dotnet pack -c Release
 
 .nuget\nuget push *.nupkg -Source "https://nuget.org"
