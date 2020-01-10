@@ -39,7 +39,7 @@ Remove-Item bin\Release\*.nupkg
 
 dotnet pack -c Release
 
-.nuget\nuget push *.nupkg -Source "https://nuget.org"
+.nuget\nuget push bin\Release\*.nupkg -Source "https://nuget.org"
 
 Remove-Item bin\Release\*.nupkg
 ```
