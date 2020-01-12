@@ -1,25 +1,10 @@
-if (!(Test-Path ".nuget\nuget.exe")) {
-	New-Item -ItemType directory -Path .nuget
-	
-	$MyFolder=get-item .\.nuget -Force
-	$MyFolder.attributes="Hidden"
-	
-	Invoke-WebRequest -OutFile .nuget\nuget.exe https://dist.nuget.org/win-x86-commandline/latest/nuget.exe
-}
+rm -r bin
 
-if (!(Test-Path "bin\Release")) {
-	Remove-Item bin\Release\*.nupkg
-}
-
+dotnet clean
 dotnet build -c Release
-
-Remove-Item bin\Release\*.nupkg
-
+dotnet test
 dotnet pack -c Release
+dotnet nuget push bin\Release\*.nupkg -s "https://nuget.org"
 
-.nuget\nuget push bin\Release\*.nupkg -Source "https://nuget.org"
-
-Remove-Item bin\Release\*.nupkg
-
-
+rm -r bin
 
